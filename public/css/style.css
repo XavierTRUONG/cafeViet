@@ -16,6 +16,8 @@ body {
     height: 100vh;
 }
 
+/* NAVBAR -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -36,13 +38,13 @@ body {
 .items-left {
     display: flex;
     justify-content: space-between;
-    width: 15%;
+    width: 190px;
 }
 
 .items-right {
     display: flex;
     justify-content: space-between;
-    width: 15%;
+    width: 190px;
 }
 
 .items-link {
@@ -59,6 +61,8 @@ body {
 .logo {
     width: 100px;
 }
+
+/* ACCUEIL ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .home {
     display: flex;
@@ -135,7 +139,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 55%;
+    padding: 0 1rem;
+    width: 1300px;
     height: 100%;
     color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
@@ -172,4 +177,85 @@ body {
 
 .location {
     color: gold;
+}
+
+/* MENU BURGER ----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.menu-burger {
+    display: none;
+}
+
+#menu_checkbox {
+    display: none;
+}
+  
+label {
+    display: block;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+  
+label div {
+    position: relative;
+    top: 0;
+    height: 12px;
+    background-color: #fff;
+    margin-bottom: 12px;
+    transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width,
+      0.3s ease right;
+    border-radius: 2px;
+}
+  
+label div:first-child {
+    transform-origin: 0;
+}
+  
+label div:last-child {
+    margin-bottom: 0;
+    transform-origin: 60px;
+}
+  
+label div:nth-child(2) {
+    right: 0;
+    width: 60px;
+}
+  
+#menu_checkbox:checked + label div:first-child {
+    top: -6px;
+    transform: rotateZ(45deg);
+}
+  
+#menu_checkbox:checked + label div:last-child {
+    top: 6px;
+    transform: rotateZ(45deg);
+}
+  
+#menu_checkbox:checked + label div:nth-child(2) {
+    width: 85px;
+    top: 0;
+    right: 13px;
+    transform: rotateZ(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .items-left, .items-right {
+        display: none;
+    }
+
+    .menu-burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+    }
+
+    .navbar-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
 }
